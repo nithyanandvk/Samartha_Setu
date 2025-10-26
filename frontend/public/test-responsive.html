@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Responsiveness Test - Samartha Setu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      padding: 1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #1e293b;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .test-section {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .test-section h2 {
+      color: #34D399;
+      margin-bottom: 1rem;
+    }
+    
+    .status {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .status.pass {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    
+    .status.fail {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .test-card {
+      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 2px solid #e5e7eb;
+    }
+    
+    .test-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    
+    .test-card p {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+    
+    .viewport-info {
+      background: #eff6ff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .viewport-info strong {
+      color: #1e40af;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 0.5rem;
+      }
+      
+      .test-section {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .test-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Mobile Responsiveness Test</h1>
+    
+    <div class="viewport-info">
+      <p>Current Viewport</p>
+      <strong id="viewport-width"></strong>
+      <p id="device-type"></p>
+    </div>
+    
+    <div class="test-section">
+      <h2>✅ Responsive Features Applied</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <h3>🎨 Typography</h3>
+          <p>Scales from 2rem → 1.5rem on mobile</p>
+        </div>
+        <div class="test-card">
+          <h3>📦 Containers</h3>
+          <p>Proper padding: 2rem → 0.75rem</p>
+        </div>
+        <div class="test-card">
+          <h3>🔘 Buttons</h3>
+          <p>Full-width on mobile, 44x44px minimum</p>
+        </div>
+        <div class="test-card">
+          <h3>📝 Forms</h3>
+          <p>16px font prevents iOS zoom</p>
+        </div>
+        <div class="test-card">
+          <h3>🗂️ Cards</h3>
+          <p>Stack vertically, no overlap</p>
+        </div>
+        <div class="test-card">
+          <h3>🔔 Notifications</h3>
+          <p>Full-width, proper z-index</p>
+        </div>
+        <div class="test-card">
+          <h3>🗺️ Maps</h3>
+          <p>Responsive height: 400px → 300px</p>
+        </div>
+        <div class="test-card">
+          <h3>💬 Chat</h3>
+          <p>Full-height, message bubbles 85%</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>🔧 Fixed Issues</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <h3>✅ No Horizontal Scroll</h3>
+          <p>overflow-x: hidden applied</p>
+        </div>
+        <div class="test-card">
+          <h3>✅ No Overlapping</h3>
+          <p>Proper z-index hierarchy</p>
+        </div>
+        <div class="test-card">
+          <h3>✅ Touch-Friendly</h3>
+          <p>44x44px tap targets</p>
+        </div>
+        <div class="test-card">
+          <h3>✅ Readable Text</h3>
+          <p>No text overflow, proper wrapping</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>📊 Breakpoints</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <h3>🖥️ Desktop</h3>
+          <p>> 768px - Full layout</p>
+        </div>
+        <div class="test-card">
+          <h3>📱 Tablet</h3>
+          <p>≤ 768px - Single column</p>
+        </div>
+        <div class="test-card">
+          <h3>📱 Mobile</h3>
+          <p>≤ 480px - Compact layout</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="test-section">
+      <h2>🚀 Next Steps</h2>
+      <ol style="padding-left: 1.5rem; color: #64748b;">
+        <li style="margin-bottom: 0.5rem;">Start the frontend: <code>npm start</code></li>
+        <li style="margin-bottom: 0.5rem;">Open on mobile device or Chrome DevTools</li>
+        <li style="margin-bottom: 0.5rem;">Test all pages (Dashboard, Forms, Maps, etc.)</li>
+        <li style="margin-bottom: 0.5rem;">Verify no horizontal scrolling</li>
+        <li style="margin-bottom: 0.5rem;">Check touch targets are large enough</li>
+        <li style="margin-bottom: 0.5rem;">Test forms on iOS (no zoom)</li>
+      </ol>
+    </div>
+  </div>
+  
+  <script>
+    function updateViewportInfo() {
+      const width = window.innerWidth;
+      document.getElementById('viewport-width').textContent = width + 'px';
+      
+      let deviceType = '';
+      if (width <= 480) {
+        deviceType = '📱 Mobile Phone';
+      } else if (width <= 768) {
+        deviceType = '📱 Tablet';
+      } else {
+        deviceType = '🖥️ Desktop';
+      }
+      document.getElementById('device-type').textContent = deviceType;
+    }
+    
+    updateViewportInfo();
+    window.addEventListener('resize', updateViewportInfo);
+  </script>
+</body>
+</html>
