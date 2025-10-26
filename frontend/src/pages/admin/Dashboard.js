@@ -451,7 +451,7 @@ const AdminDashboard = () => {
               Access our dedicated disaster management portal for emergency food relief operations, crisis response coordination, and rapid deployment.
             </p>
             <button
-              onClick={() => window.open('https://disaster-management.samarthasetu.org', '_blank')}
+              onClick={() => window.open('https://samarthasethudm.netlify.app/', '_blank')}
               style={{
                 display: 'flex',
                 alignItems: 'center',
